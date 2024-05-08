@@ -1,15 +1,5 @@
 // Функции для тренировки
 const isPalindrome = (str) => {
-  const normalizedStr = str.toLowerCase().replaceAll(' ', '');
-  const reversedStr = str.split('').reverse().join('');
-
-  return normalizedStr === reversedStr;
-};
-
-isPalindrome('Лёша на полке клопа нашёл ');
-
-// Альтернативный вариант решения задачи, является ли строка палиндромом
-const canPalindrome = (str) => {
   const normalizedStr = str.replaceAll(' ','').toUpperCase();
 
   for (let i = 0; normalizedStr.length / 2 > i; i++) {
@@ -21,7 +11,7 @@ const canPalindrome = (str) => {
   return true;
 };
 
-canPalindrome('Д Овод ');
+isPalindrome('Лёша на полке клопа нашёл ');
 
 const getNumbers = (stringWithNumbers) => {
   const numbers = String(stringWithNumbers).match(/\d+/g);
@@ -31,7 +21,7 @@ const getNumbers = (stringWithNumbers) => {
 
 getNumbers('ECMAScript 2022');
 
-const getModifiedString = (originalStr, minLength, paddingStr) => {
+const padStartStr = (originalStr, minLength, paddingStr) => {
   if (minLength <= originalStr.length) {
     return originalStr;
   }
@@ -43,8 +33,8 @@ const getModifiedString = (originalStr, minLength, paddingStr) => {
   return paddingStr.slice(0, freeLength) + paddingStr.repeat(repeatPaddingSt) + originalStr;
 };
 
-getModifiedString('1', 20, '2345');
+padStartStr('1', 20, '2345');
 
-const isStrLengthValidm = (str, maxLength) => str.length <= maxLength;
+const isStrLengthValid = (str, maxLength) => str.length <= maxLength;
 
-isStrLengthValidm('проверяемая строка', 20);
+isStrLengthValid('проверяемая строка', 20);
